@@ -1,7 +1,7 @@
 # ```norm_help_func.R```
 
 ## Description
-A simple function to illustrate the distinction between percentiles, z-scores, and quantiles in a normal distribution.
+A simple R function to illustrate the distinction between percentiles, z-scores, and quantiles in a normal distribution.
 
 ## Example output
 
