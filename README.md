@@ -3,7 +3,7 @@
 ## Description
 A simple R function to illustrate the distinction between percentiles, z-scores, and quantiles in a normal distribution.
 
-## Example output
+## Example usage and output
 
 ```
 norm_help(percentile = 11,
