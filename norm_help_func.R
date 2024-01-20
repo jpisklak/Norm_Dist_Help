@@ -80,7 +80,7 @@ norm_help <- function(percentile = NULL,
   text_df$y <- text_df$y - text_df$y/2
   text_df$y[c(1:2, 7:8)] <- text_df$y[c(1:2, 7:8)] + 
                               text_df$y[c(1:2, 7:8)] * 
-                              c(75, 5, 5, 75)
+                              c(60, 4, 4, 60)
   
   
   #Plot
