@@ -20,6 +20,7 @@ norm_help(percentile = 11,
 <img title="11th Percentile Plot.png" src="11th Percentile Plot.png">
 
 ## Loading the function
+To load the function in R, run the following code:
 ```source("https://raw.githubusercontent.com/jpisklak/Norm_Dist_Help/main/norm_help_func.R")```
 
 ## Arguments
