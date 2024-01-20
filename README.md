@@ -26,9 +26,9 @@ norm_help(percentile = 11,
 
 ```percentile``` Percentile value displayed on plot.
 
-```z``` Z-score value displayed on plot.
+```z``` z-score value displayed on plot (pronounced 'zed-score').
 
-```quantile``` X-axis point-value displayed on plot.
+```quantile``` x-axis point-value displayed on plot.
 
 ```mean, sd``` Distribution's specified mean and standard deviation. Defaults to 0 and 1, respectively.
 
