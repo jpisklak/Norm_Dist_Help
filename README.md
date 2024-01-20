@@ -47,5 +47,4 @@ Plot saves as a 400 dpi PNG file.
 The following CRAN packages are necessary to run this function and will be automatically installed and loaded when run:
 
   - ggplot2
-  - svglite
   - ggrepel
