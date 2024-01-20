@@ -89,14 +89,14 @@ norm_help <- function(percentile = NULL,
                     "specified percentage of the values fall.",
                    
                    "\n        Can be conceptualized as 'area under the curve calculated from left to right. ",
-                   "\n        E.g., The 50th percentile equals 50% of the area under the curve shaded.",
+                   "\n        -E.g., The 50th percentile equals 50% of the area under the curve shaded.",
                    
                    "\n\nz-score: Distance from the mean (\U00B5) in standard deviations (\U03C3). ", 
-                   "\n        Note: each segment of the distribution represents 1 standard deviations.",
+                   "\n        Note: each segment of the distribution represents 1 standard deviation.",
                    
                    "\n\nQuantile: A location on the distributions x-axis. ",
-                   "\n        The z-score is a type of quantile. ",
-                   "\n        When you have a \U00B5 = 0 and a \U03C3 = 1, the x-axis is z-scores.",
+                   "\n        -The z-score is a type of quantile. ",
+                   "\n        -When you have a \U00B5 = 0 and a \U03C3 = 1, the x-axis is z-scores.",
                    sep = "")
   subtitle <- paste("\U00B5 = ", round(cent, 2),
                  ", \U03C3 = ", round(spread, 2),
