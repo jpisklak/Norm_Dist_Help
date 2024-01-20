@@ -9,7 +9,6 @@ norm_help <- function(percentile = NULL,
 
   # Load/Install Packages  
   if (!require('ggplot2')) install.packages('ggplot2'); library('ggplot2')
-  if (!require('svglite')) install.packages('svglite'); library('svglite')
   if (!require('ggrepel')) install.packages('ggrepel'); library('ggrepel')
 
   #Function Arguments
