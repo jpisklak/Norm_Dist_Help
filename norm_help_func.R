@@ -105,7 +105,7 @@ norm_help <- function(percentile = NULL,
     "\n        Note: each segment of the distribution represents 1 standard deviation.",
     "\n\nQuantile: A location on the distributions x-axis. ",
     "\n        -The z-score is a type of quantile. ",
-    "\n        -When you have a \U00B5 = 0 and a \U03C3 = 1, the x-axis is z-scores.",
+    "\n        -When \U00B5 = 0 and \U03C3 = 1, the x-axis is z-scores.",
     sep = ""
   )
   subtitle <- paste("\U00B5 = ", round(cent, 2),
