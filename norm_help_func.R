@@ -5,7 +5,12 @@ norm_help <- function(percentile = NULL,
                       sd = 1,
                       title = "Normal Distribution",
                       colour = "#00BFFF",
-                      save = FALSE) {
+                      save = FALSE,
+                      caption = FALSE,
+                      units = "cm", 
+                      width = 40, 
+                      height = 25,
+                      image = "png") {
   # Load/Install Packages
   if (!require("ggplot2")) install.packages("ggplot2")
   library("ggplot2")
@@ -15,6 +20,11 @@ norm_help <- function(percentile = NULL,
   # Function Arguments
   cent <- mean
   spread <- sd
+  
+  args <- c(!is.null(percentile), !is.null(z), !is.null(quantile))
+  if (sum(args) > 1) {
+    stop("Invalid input: \nPlease provide only one of the following — 'percentile', 'z', or 'quantile'. \nThese options are mutually exclusive and cannot be combined.")
+  }
 
   if (is.numeric(percentile)) {
     perc <- percentile
@@ -43,8 +53,6 @@ norm_help <- function(percentile = NULL,
       sd = spread
     )
   )
-
-
 
   # Percent Segments
   df_seg <- data.frame(
@@ -89,7 +97,7 @@ norm_help <- function(percentile = NULL,
 
   # Plot
   x_nudge <- ifelse(z > 0, 1.25 * spread, (-1.25) * spread)
-  caption <- paste("\n\n\nPercentile: A point in a distribution below which a ",
+  caption_txt <- paste("\n\n\nPercentile: A point in a distribution below which a ",
     "specified percentage of the values fall.",
     "\n        Can be conceptualized as 'area under the curve calculated from left to right. ",
     "\n        -E.g., The 50th percentile equals 50% of the area under the curve shaded.",
@@ -182,14 +190,12 @@ norm_help <- function(percentile = NULL,
     } +
     {
       if (perc > 0.01 & perc <= 99.99) {
-        geom_point(
-          mapping = aes(
-            x = quant,
-            y = dnorm(quant,
-              mean = cent,
-              sd = spread
-            )
-          ),
+        annotate(
+          geom = "point",
+          x = quant,
+          y = dnorm(quant,
+            mean = cent,
+            sd = spread),
           colour = "red",
           size = 5
         )
@@ -203,7 +209,7 @@ norm_help <- function(percentile = NULL,
       y = "Density",
       title = title,
       subtitle = subtitle,
-      caption = caption
+      caption = ifelse(caption == TRUE, caption_txt, "")
     ) +
     theme_classic() +
     theme(
@@ -217,8 +223,8 @@ norm_help <- function(percentile = NULL,
   print(plot)
 
   if (save == TRUE) {
-    filename <- paste(round(perc), "th Percentile Plot.png", sep = "")
-    ggsave(filename, dpi = 400, units = "in", width = 17, height = 10)
+    filename <- paste0(round(perc), "th Percentile Plot.", image)
+    ggsave(filename, dpi = 400, units = units, width = width, height = height)
     message(paste("File saved as '", filename, "'", sep = ""))
   }
 }
